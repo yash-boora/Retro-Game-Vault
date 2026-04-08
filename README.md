@@ -19,3 +19,6 @@ The API is used to:
 - Compare data of two selected games
 
 All API calls are handled using JavaScript (Fetch API / async-await).
+
+
+this is my Deployed link : "retro-game-vault.netlify.app"
