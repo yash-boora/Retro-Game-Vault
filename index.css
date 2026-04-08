@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+  }
+  
+  #app {
+    display: flex;
+    height: 100vh;
+  }
+  
+
+  #sidebar {
+    width: 250px;
+    background: white;
+    border-right: 1px solid #ccc;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+  #sidebar h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  #sidebar h2 span {
+    background: purple;
+    color: white;
+    border-radius: 999px;
+    padding: 1px 8px;
+    font-size: 12px;
+  }
+  
+  #empty-msg {
+    color: #999;
+    font-size: 13px;
+  }
+  
+  .wish-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: #f7f7f7;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .wish-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  
+  .wish-name {
+    font-size: 12px;
+    font-weight: bold;
+    flex: 1;
+  }
+  
+  .wish-remove {
+    cursor: pointer;
+    color: #aaa;
+    font-size: 18px;
+  }
+  #main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  #topbar {
+    background: white;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  #search {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .platform-btn {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .platform-btn.active {
+    background: purple;
+    color: white;
+    border-color: purple;
+  }
+  
+  #compare-btn {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  #compare-btn.active {
+    background: green;
+    color: white;
+    border-color: green;
+  }
+  
+  #status {
+    font-size: 12px;
+    color: #888;
+    padding: 8px 16px;
+  }
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+    padding: 16px;
+    overflow-y: auto;
+    flex: 1;
+  }
+  
+  .game-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .game-card.compare-selected {
+    border: 2px solid green;
+  }
+  
+  .game-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .card-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .stars {
+    color: orange;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  
+  .card-meta {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  
+  .btn-wish {
+    font-size: 11px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f0f0f0;
+    cursor: pointer;
+    margin-right: 4px;
+  }
+  
+  .btn-wish.saved {
+    background: green;
+    color: white;
+    border-color: green;
+  }
+  
+  .btn-compare {
+    font-size: 11px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  .btn-compare.picked {
+    background: purple;
+    color: white;
+    border-color: purple;
+  }
+  #compare-panel {
+    display: none;
+    background: white;
+    border-top: 1px solid #ccc;
+    padding: 16px;
+  }
+  
+  #compare-panel h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  #compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .compare-hint {
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+  }
+  
+  .compare-col {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .compare-col img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .compare-col .compare-body {
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .compare-col .compare-body strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  
+  .compare-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  .compare-row:last-child {
+    border: none;
+  }
+  
+  .compare-row span:first-child {
+    color: #888;
+  }

@@ -1,16 +1,53 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Game Search</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+ 
+  <div id="app">
+ 
+    <div id="sidebar">
+      <h2>Wishlist <span id="wish-count">0</span></h2>
+      <div id="wishlist-items">
+        <p id="empty-msg">No games saved yet.</p>
+      </div>
+    </div>
+ 
+   
+    <div id="main">
 
-    <h1>Game Info</h1>
-    <div id="game"></div>
-  
-    <script src="index.js"></script>
-  </body>
+      <div id="topbar">
+        <input type="text" id="search" placeholder="Search games..." />
+ 
+        <button class="platform-btn active" data-platform="">All</button>
+        <button class="platform-btn" data-platform="pc">PC</button>
+        <button class="platform-btn" data-platform="playstation">PlayStation</button>
+        <button class="platform-btn" data-platform="xbox">Xbox</button>
+        <button class="platform-btn" data-platform="nintendo">Nintendo</button>
+ 
+        <button id="compare-btn">Compare Mode</button>
+      </div>
+ 
+      <p id="status">Loading...</p>
+ 
+     
+      <div id="grid"></div>
+ 
+      
+      <div id="compare-panel">
+        <h3>Comparing:</h3>
+        <div id="compare-grid">
+          <div id="slot-a" class="compare-hint">Pick first game</div>
+          <div id="slot-b" class="compare-hint">Pick second game</div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+ 
+  <script src="index.js"></script>
+</body>
 </html>
